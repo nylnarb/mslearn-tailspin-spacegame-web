@@ -1,3 +1,16 @@
-pool: 'Default'
+#ASP .NET Core
+# Build and test ASP.NET Core application
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+
 steps:
-- bash: echo hello world
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'Build solution'
