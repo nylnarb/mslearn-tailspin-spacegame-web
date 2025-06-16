@@ -1,8 +1,9 @@
+# Azure Pipelines configuration file for building a .NET Core project with Node.js dependencies
 trigger:
 - '*'
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 variables:
   buildConfiguration: 'Release'
